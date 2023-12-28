@@ -17,7 +17,12 @@ This project is an Backend Server that Replicates a Library with Books and Autho
     -  springframework <br>
     -  maven  <br>
     -  h2database  <br>
-    -  modelmapper  <br>
+    -  modelmapper  <be>
+    
+#Testing Done With:
+ -  Mockito  <br>
+ -  MockMvc  <be>
+
 
 # Prerequisites to run:
 - Docker
