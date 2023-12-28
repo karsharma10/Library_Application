@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: com.kartik.database.controllers.BookControllerIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 1.728 s <<< FAILURE! -- in com.kartik.database.controllers.BookControllerIntegrationTests
+com.kartik.database.controllers.BookControllerIntegrationTests.testThatFindOneBookReturnCorrectJSONObject -- Time elapsed: 0.058 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.title" expected:<The Shadow> but was:<The Shadow Test 98723123>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.kartik.database.controllers.BookControllerIntegrationTests.testThatFindOneBookReturnCorrectJSONObject(BookControllerIntegrationTests.java:128)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.kartik.database.controllers.BookControllerIntegrationTests.testThatFindBookReturnsCorrectJSON -- Time elapsed: 0.018 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$[0].isbn" expected:<9342> but was:<11231>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.kartik.database.controllers.BookControllerIntegrationTests.testThatFindBookReturnsCorrectJSON(BookControllerIntegrationTests.java:91)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.kartik.database.controllers.BookControllerIntegrationTests.testThatCreateBookReturnsTheCorrectHttpStatus -- Time elapsed: 0.015 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<200>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.kartik.database.controllers.BookControllerIntegrationTests.testThatCreateBookReturnsTheCorrectHttpStatus(BookControllerIntegrationTests.java:50)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

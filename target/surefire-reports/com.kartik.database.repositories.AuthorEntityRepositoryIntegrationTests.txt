@@ -1,0 +1,57 @@
+-------------------------------------------------------------------------------
+Test set: com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.473 s <<< FAILURE! -- in com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests
+com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests.testThatGetAuthorsWithAgeGreaterThan -- Time elapsed: 0.102 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+Expecting actual:
+  [AuthorEntity(id=52, name=Abiligal Rose, age=80),
+    AuthorEntity(id=102, name=Abiligal Rose, age=80),
+    AuthorEntity(id=152, name=Abiligal Rose, age=80),
+    AuthorEntity(id=202, name=Abiligal Rose, age=80),
+    AuthorEntity(id=252, name=Abiligal Rose, age=80),
+    AuthorEntity(id=302, name=Abiligal Rose, age=80),
+    AuthorEntity(id=352, name=Abiligal Rose, age=80),
+    AuthorEntity(id=403, name=Hello, age=97),
+    AuthorEntity(id=1, name=Abiligal Rose, age=80)]
+to contain exactly (and in same order):
+  [AuthorEntity(id=1, name=Abiligal Rose, age=80)]
+but some elements were not expected:
+  [AuthorEntity(id=52, name=Abiligal Rose, age=80),
+    AuthorEntity(id=102, name=Abiligal Rose, age=80),
+    AuthorEntity(id=152, name=Abiligal Rose, age=80),
+    AuthorEntity(id=202, name=Abiligal Rose, age=80),
+    AuthorEntity(id=252, name=Abiligal Rose, age=80),
+    AuthorEntity(id=302, name=Abiligal Rose, age=80),
+    AuthorEntity(id=352, name=Abiligal Rose, age=80),
+    AuthorEntity(id=403, name=Hello, age=97)]
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests.testThatGetAuthorsWithAgeGreaterThan(AuthorEntityRepositoryIntegrationTests.java:106)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests.testThatMultipleAuthorsCanBeCreatedAndRecalled -- Time elapsed: 0.062 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 3 but was: 12 in:
+[AuthorEntity(id=52, name=Abiligal Rose, age=80),
+    AuthorEntity(id=102, name=Abiligal Rose, age=80),
+    AuthorEntity(id=152, name=Abiligal Rose, age=80),
+    AuthorEntity(id=202, name=Abiligal Rose, age=80),
+    AuthorEntity(id=252, name=Abiligal Rose, age=80),
+    AuthorEntity(id=302, name=Abiligal Rose, age=80),
+    AuthorEntity(id=352, name=Abiligal Rose, age=80),
+    AuthorEntity(id=402, name=null, age=null),
+    AuthorEntity(id=403, name=Hello, age=97),
+    AuthorEntity(id=2, name=Thomas Cronin, age=44),
+    AuthorEntity(id=3, name=Jese A Casey, age=24),
+    AuthorEntity(id=452, name=Abiligal Rose, age=80)]
+	at com.kartik.database.repositories.AuthorEntityRepositoryIntegrationTests.testThatMultipleAuthorsCanBeCreatedAndRecalled(AuthorEntityRepositoryIntegrationTests.java:50)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

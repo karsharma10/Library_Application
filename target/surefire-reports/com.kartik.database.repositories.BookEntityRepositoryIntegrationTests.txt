@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.kartik.database.repositories.BookEntityRepositoryIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.874 s <<< FAILURE! -- in com.kartik.database.repositories.BookEntityRepositoryIntegrationTests
+com.kartik.database.repositories.BookEntityRepositoryIntegrationTests.testThatMultipleBooksCanBeCreatedAndRecalled -- Time elapsed: 0.040 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 3 but was: 6 in:
+[BookEntity(isbn=11231, title=The Shadow, authorEntity=null),
+    BookEntity(isbn=9876542, title=The Shadow Test 98723, authorEntity=null),
+    BookEntity(isbn=9342, title=The Shadow Test 98723123, authorEntity=null),
+    BookEntity(isbn=978-1, title=The Shadow in the Attic, authorEntity=AuthorEntity(id=752, name=Abiligal Rose, age=80)),
+    BookEntity(isbn=978-121, title=Beyond the Horizon, authorEntity=AuthorEntity(id=752, name=Abiligal Rose, age=80)),
+    BookEntity(isbn=978-1432, title=THe Last Ember, authorEntity=AuthorEntity(id=752, name=Abiligal Rose, age=80))]
+	at com.kartik.database.repositories.BookEntityRepositoryIntegrationTests.testThatMultipleBooksCanBeCreatedAndRecalled(BookEntityRepositoryIntegrationTests.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

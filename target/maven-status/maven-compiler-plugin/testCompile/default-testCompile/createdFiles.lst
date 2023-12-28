@@ -1,0 +1,6 @@
+com/kartik/database/repositories/AuthorEntityRepositoryIntegrationTests.class
+com/kartik/database/BooksApiApplicationTests.class
+com/kartik/database/repositories/BookEntityRepositoryIntegrationTests.class
+com/kartik/database/TestDataUtil.class
+com/kartik/database/controllers/AuthorControllerIntegrationTests.class
+com/kartik/database/controllers/BookControllerIntegrationTests.class

@@ -1,0 +1,17 @@
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/services/AuthorService.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/repositories/BookRepository.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/services/impl/AuthorServiceImpl.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/config/MapperConfig.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/mappers/impl/AuthorMapperImpl.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/controllers/AuthorController.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/domain/entities/BookEntity.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/services/impl/BookServiceImpl.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/BooksApiApplication.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/domain/dto/AuthorDto.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/controllers/BookController.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/mappers/Mapper.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/repositories/AuthorRepository.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/services/BookService.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/domain/dto/BookDto.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/mappers/impl/BookMapperImpl.java
+/Users/kartiksharma/Desktop/Learning Spring Boot/JPA/src/main/java/com/kartik/database/domain/entities/AuthorEntity.java
