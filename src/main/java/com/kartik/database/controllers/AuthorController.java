@@ -76,4 +76,15 @@ public class AuthorController {
 
         return new ResponseEntity<>(savedUpdatedAuthorDto, HttpStatus.OK);
     }
+
+    @DeleteMapping(path = "/authors/{id}")
+    public ResponseEntity deleteAuthor(@PathVariable Long id){
+        if(!authorService.isExist(id)){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        else{
+            authorService.delete(id);
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+    }
 }

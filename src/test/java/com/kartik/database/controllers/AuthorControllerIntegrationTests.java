@@ -191,5 +191,60 @@ public class AuthorControllerIntegrationTests {
         );
     }
 
+
+    @Test
+    public void testThatUpdatingAuthorsReturnsTheCorrectHttpStatus() throws Exception {
+
+        AuthorEntity testAuthorA = TestDataUtil.createTestAuthorA();
+        testAuthorA.setName("Testy123");
+        authorService.save(testAuthorA);
+
+        String authorJson = objectMapper.writeValueAsString(testAuthorA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/authors/"+testAuthorA.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(authorJson)
+        ).andExpect(
+                MockMvcResultMatchers.status().isOk()
+        );
+    }
+
+    @Test
+    public void testThatUpdatingAuthorsReturnsTheCorrectObject() throws Exception {
+
+        AuthorEntity testAuthorA = TestDataUtil.createTestAuthorA();
+        testAuthorA.setName("Testy123");
+        authorService.save(testAuthorA);
+
+        String authorJson = objectMapper.writeValueAsString(testAuthorA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/authors/"+testAuthorA.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(authorJson)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.id").value(testAuthorA.getId())
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.name").value("Testy123")
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.age").value(testAuthorA.getAge())
+        );
+    }
+
+    @Test
+    public void testThatAuthorDeletedReturnsCorrectHttpStatus404() throws Exception {
+        AuthorEntity testAuthorA = TestDataUtil.createTestAuthorA();
+        authorService.save(testAuthorA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.delete("/authors/"+testAuthorA.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(
+                MockMvcResultMatchers.status().isNoContent()
+        );
+    }
+
+
 }
 

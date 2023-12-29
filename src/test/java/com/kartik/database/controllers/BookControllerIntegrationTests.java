@@ -1,6 +1,7 @@
 package com.kartik.database.controllers;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kartik.database.TestDataUtil;
 import com.kartik.database.domain.entities.BookEntity;
@@ -176,6 +177,64 @@ public class BookControllerIntegrationTests {
                 MockMvcResultMatchers.status().isOk()
         );
     }
+
+
+    @Test
+    public void testThatUpdatingBookReturnsCorrectHttpStatus200() throws Exception {
+        BookEntity testBookA = TestDataUtil.createTestBookA(null);
+        bookService.save(testBookA.getIsbn(), testBookA);
+
+        testBookA.setTitle("Mock Test");
+
+
+        String bookJson = objectMapper.writeValueAsString(testBookA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/books/"+testBookA.getIsbn())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(bookJson)
+        ).andExpect(
+                MockMvcResultMatchers.status().isOk()
+        );
+
+    }
+
+    @Test
+    public void testThatUpdatingBookReturnsCorrectJavaObject() throws Exception {
+        BookEntity testBookA = TestDataUtil.createTestBookA(null);
+        bookService.save(testBookA.getIsbn(), testBookA);
+
+        testBookA.setTitle("Mock Test");
+
+
+        String bookJson = objectMapper.writeValueAsString(testBookA);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.patch("/books/"+testBookA.getIsbn())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(bookJson)
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.isbn").value(testBookA.getIsbn())
+        ).andExpect(
+                MockMvcResultMatchers.jsonPath("$.title").value(testBookA.getTitle())
+        );
+
+    }
+    @Test
+    public void testThatBookDeletedReturnsCorrectHttpStatus() throws Exception {
+        BookEntity testBookA = TestDataUtil.createTestBookA(null);
+        bookService.save(testBookA.getIsbn(), testBookA);
+
+
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.delete("/books/"+testBookA.getIsbn())
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(
+                MockMvcResultMatchers.status().isNoContent()
+        );
+    }
+
 
 
 }
